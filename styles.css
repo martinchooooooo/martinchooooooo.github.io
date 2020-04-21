@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Oswald&family=Lobster&family=Lato&family=Neutra+Text');
+@import url('https://fonts.googleapis.com/css2?family=Oswald&family=Lobster&family=Lato&family=Neutra+Text&family=Quicksand');
 
 html, body {
     /* background-color: #262730; */
@@ -18,7 +18,7 @@ html, body {
 }
 
 section {
-    padding: 5px;
+    padding: 0.4em;
     margin-bottom: 1em;
     background: #D33F49;
     color: #FFF;
@@ -31,12 +31,14 @@ section:hover {
 }
 
 section h2 { font-family: 'Oswald'; }
-p { font-family: 'Lato'; }
+p { font-family: 'Quicksand'; }
 
 .icon {
     height: 100px;
     float: left;
 }
+
+.bio-col section { padding: 0.8em; }
 
 .social-col { flex-flow: row; width: 8%; }
 .social-col section { text-align: center; }
@@ -78,6 +80,7 @@ p { font-family: 'Lato'; }
 #AvatarCard img { height: 12em; }
 #AvatarCard h2{ font-family: 'Neutra Text'; letter-spacing: 0.1em; }
 #MartinBio { background: #4C3B4D; }
+#MartinBio a { color: white; }
 #Credits { background: rgb(30, 53, 130); }
 #Credits h2 { text-align: center; }
 
