@@ -36,7 +36,7 @@ section a:link, section a:visited {
 section h2 { font-family: 'Oswald'; }
 p { font-family: 'Quicksand'; }
 
-.icon { height: 200px; }
+.icon { margin-top: 0.8em; }
 
 .bio-col section { padding: 0.8em; }
 
@@ -102,7 +102,6 @@ p { font-family: 'Quicksand'; }
 #MartinBio a { color: white; }
 #Credits { background: rgb(30, 53, 130); }
 #Credits h2 { text-align: center; }
-
 
 #Captions { background: #262730; }
 #AndroidSample { background: #77BA99; color: white;} 
