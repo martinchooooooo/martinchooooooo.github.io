@@ -26,9 +26,13 @@ section {
     box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
     transition: all 0.3s cubic-bezier(.25,.8,.25,1);
 }
-section:hover {
-    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+
+section a:link, section a:visited {
+    text-decoration: inherit;
+    color: inherit;
+    cursor: auto;
 }
+
 
 section h2 { font-family: 'Oswald'; }
 p { font-family: 'Quicksand'; }
@@ -43,6 +47,11 @@ p { font-family: 'Quicksand'; }
 .social-col { flex-flow: row; width: 8%; }
 .social-col section { text-align: center; }
 .social-col svg { height: 2em; }
+.social-col section:hover,
+.project-col section:hover {
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    cursor: grab;
+}
 
 .project-col section { padding: 9px;}
 
@@ -104,6 +113,7 @@ p { font-family: 'Quicksand'; }
     margin-top: 1em;
     margin-right: 10px;
 }
+#CorporteFighter { background: #443627; }
 
 
  
