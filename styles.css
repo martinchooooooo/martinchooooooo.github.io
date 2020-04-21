@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald&family=Lobster&family=Lato&family=Neutra+Text');
+
+html, body {
+    /* background-color: #262730; */
+    background-color: #ADA8B6;
+}
+
+#Ether {
+    display:flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: auto;
+}
+
+.col {
+    display: flex;
+    flex-flow: column;
+}
+
+section {
+    padding: 5px;
+    margin-bottom: 1em;
+    background: #D33F49;
+    color: #FFF;
+    border-radius: 8px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+section:hover {
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+section h2 { font-family: 'Oswald'; }
+p { font-family: 'Lato'; }
+
+.icon {
+    height: 100px;
+    float: left;
+}
+
+.social-col { flex-flow: row; width: 8%; }
+.social-col section { text-align: center; }
+.social-col svg { height: 2em; }
+
+.project-col section { padding: 9px;}
+
+/* Sicne we're 'mobile first' lets support our friendly desktop users */
+@media only screen and (min-width: 60rem) {
+    #Ether {
+        flex-direction: row;
+        align-items: center;
+    }
+    .col {
+        max-width: 30%;
+    }
+    .middle-col { 
+        width: 40%; 
+    }
+    .social-col {
+        flex-flow: column !important; /* It's very important */
+    }
+    .project-col {
+        margin: 0 1em;
+    }
+}
+
+/* Customisations for each section if needed **/
+
+#AvatarCard {
+    background-color: #FFF;
+    color: #000;
+    transition: 0.3s;
+    border-radius: 30px;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+#AvatarCard img { height: 12em; }
+#AvatarCard h2{ font-family: 'Neutra Text'; letter-spacing: 0.1em; }
+#MartinBio { background: #4C3B4D; }
+#Credits { background: rgb(30, 53, 130); }
+#Credits h2 { text-align: center; }
+
+
+#Captions { background: #262730; }
+#AndroidSample { background: #77BA99; color: white;} 
+#Qantas { background: rgb(198, 41, 28); }
+#Qantas img { 
+    height: 100px; 
+    margin-right: 10px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23); 
+}
+#IqGecko { 
+    background: rgb(224, 101, 59);
+}
+#IqGecko img { 
+    height: 60px; 
+    background: white; 
+    box-shadow: 0 3px 6px rgba(255,255,255,0.16), 0 3px 6px rgba(255,255,255,0.23); 
+    border-radius: 4px;
+    margin-top: 1em;
+    margin-right: 10px;
+}
+
+
+ 
