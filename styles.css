@@ -41,7 +41,13 @@ p { font-family: 'Quicksand'; }
 .bio-col section { padding: 0.8em; }
 
 .social-col { flex-flow: row; width: 8%; }
-.social-col section { text-align: center; }
+.social-col section { 
+    text-align: center; 
+    flex-flow: column;
+    display: flex;
+    justify-content: center;
+    height: 4em;
+} 
 .social-col svg { height: 2em; }
 .social-col section:hover,
 .project-col section:hover {
@@ -113,8 +119,6 @@ p { font-family: 'Quicksand'; }
     background: white; 
     box-shadow: 0 3px 6px rgba(255,255,255,0.16), 0 3px 6px rgba(255,255,255,0.23); 
     border-radius: 4px;
-    margin-top: 1em;
-    margin-right: 10px;
 }
 #CorporteFighter { background: #443627; }
 #CorporteFighter img { height: 7em; }
