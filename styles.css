@@ -36,10 +36,7 @@ section a:link, section a:visited {
 section h2 { font-family: 'Oswald'; }
 p { font-family: 'Quicksand'; }
 
-.icon {
-    height: 100px;
-    float: left;
-}
+.icon { height: 200px; }
 
 .bio-col section { padding: 0.8em; }
 
@@ -51,8 +48,9 @@ p { font-family: 'Quicksand'; }
     box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
     cursor: grab;
 }
-
-.project-col section { padding: 9px;  overflow-y: auto;}
+.project-col svg { height: 7em; }
+.project-col section { padding: 9px;  overflow-y: auto; display: flex; }
+.project-col section div:first-child { margin-right: 5px; }
 
 
 /* Sicne we're 'mobile first' lets support our friendly desktop users */
@@ -76,7 +74,8 @@ p { font-family: 'Quicksand'; }
     .project-col {
         margin: 0 1em;
         max-height: 100vh;
-        overflow: auto;
+        overflow-y: scroll;
+        padding-right: 17px; /* Try to find size that works on most browsers on OSX */
     }
 }
 
@@ -103,8 +102,7 @@ p { font-family: 'Quicksand'; }
 #AndroidSample { background: #77BA99; color: white;} 
 #Qantas { background: rgb(198, 41, 28); }
 #Qantas img { 
-    height: 100px; 
-    margin-right: 10px;
+    height: 100px;
     box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23); 
 }
 #IqGecko { 
@@ -119,6 +117,7 @@ p { font-family: 'Quicksand'; }
     margin-right: 10px;
 }
 #CorporteFighter { background: #443627; }
+#CorporteFighter img { height: 7em; }
 
 
  
