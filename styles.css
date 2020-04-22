@@ -29,7 +29,6 @@ section {
 a:link, a:visited {
     text-decoration: none;
     color: inherit;
-    cursor: auto;
 }
 
 
@@ -52,7 +51,6 @@ p { font-family: 'Quicksand'; }
 .social-col section:hover,
 .project-col section:hover {
     box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
-    cursor: grab;
 }
 .project-col svg { height: 7em; }
 .project-col section { padding: 9px;  overflow-y: auto; display: flex; }
@@ -100,8 +98,9 @@ p { font-family: 'Quicksand'; }
 #AvatarCard h2{ font-family: 'Neutra Text'; letter-spacing: 0.1em; }
 #MartinBio { background: #4C3B4D; }
 #MartinBio a { color: white; }
-#Credits { background: rgb(30, 53, 130); }
-#Credits h2 { text-align: center; }
+#Credits { background: rgb(30, 53, 130); text-align: justify;}
+#Credits h2, #Credits div { text-align: center; }
+#Credits a { text-decoration: underline; color: yellow; cursor: hand; }
 
 #Captions { background: #262730; }
 #AndroidSample { background: #77BA99; color: white;} 
