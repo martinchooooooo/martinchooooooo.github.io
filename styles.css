@@ -94,7 +94,7 @@ p { font-family: 'Quicksand'; }
     flex-direction: column;
     text-align: center;
 }
-#AvatarCard img { height: 12em; }
+#AvatarCard img { height: 12em; display: none; }
 #AvatarCard h2{ font-family: 'Neutra Text'; letter-spacing: 0.1em; }
 #MartinBio { background: #4C3B4D; }
 #MartinBio a { color: white; }
