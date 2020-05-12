@@ -93,6 +93,7 @@ p { font-family: 'Quicksand'; }
     align-items: center;
     flex-direction: column;
     text-align: center;
+    padding: 0px;
 }
 #AvatarCard img { height: 12em; display: none; }
 #AvatarCard h2{ font-family: 'Neutra Text'; letter-spacing: 0.1em; }
