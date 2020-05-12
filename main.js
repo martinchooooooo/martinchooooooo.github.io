@@ -3,11 +3,14 @@
 const CANVAS_HEIGHT = 350
 const CANVAS_WIDTH = 435
 
-const PLAYER_IDLE_HEIGHT = 220
-const PLAYER_IDLE_WIDTH = 160
+const PLAYER_IDLE_HEIGHT = 175
+const PLAYER_IDLE_WIDTH = 85
 
-const PLAYER_GAME_HEIGHT = 110
-const PLAYER_GAME_WIDTH = 80
+const PLAYER_JUMP_WIDTH = 110
+
+const PLAYER_GAME_HEIGHT = 175
+const PLAYER_GAME_WIDTH = 85
+const PLAYER_ANIMATE_FRAME_DURATION = 200;
 
 const JUMP_HEIGHT = 130;
 const JUMP_VELOCITY = 8
@@ -28,7 +31,7 @@ var playerTotalJumps = 0
 var blockX = CANVAS_WIDTH
 var blockWidth = 30
 var blockHeight = 20
-var blockSpeed = 8
+var blockSpeed = 10
 var blockCollided = false
 
 var blockRespawnExtraMax = 900
@@ -44,7 +47,19 @@ function draw() {
     ctx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT); // clear canvas
 
     // draw the player in the starting spot
-    ctx.drawImage(Avatar, playerX, playerY, PLAYER_GAME_WIDTH, PLAYER_GAME_HEIGHT)
+
+    let img = Avatar1;
+    let width = PLAYER_GAME_WIDTH;
+    const framesElapsed = Math.floor(dt / PLAYER_ANIMATE_FRAME_DURATION);
+    if (framesElapsed % 2 != 0) {
+        img = Avatar2;
+    }
+    if (playerJumping) {
+        img = Avatar3;
+        width = PLAYER_JUMP_WIDTH
+    }
+
+    ctx.drawImage(img, playerX, playerY, width, PLAYER_GAME_HEIGHT)
     ctx.save()
 
     // draw the block to jump over
@@ -60,10 +75,8 @@ function draw() {
     // ---- Update shit ----
 
     // detect if the players total x area is ontop of the block's height
-    let hasCollidedX = PLAYER_GAME_WIDTH > blockX
-    let hasCollidedY = (playerY - PLAYER_GAME_HEIGHT) > blockHeight
-    console.log(hasCollidedX)
-    console.log(hasCollidedY)
+    let hasCollidedX = playerX + width > blockX
+    let hasCollidedY = (playerY + PLAYER_GAME_HEIGHT) > FLOOR_Y - blockHeight
     if (hasCollidedX && hasCollidedY && !blockCollided) {
         blockCollided = true
     }
@@ -113,14 +126,13 @@ function drawGameInitScreen() {
     // Avatar.width = PLAYER_IDLE_WIDTH
     const imgX = (CANVAS_WIDTH - PLAYER_IDLE_WIDTH)/2
     const imgY = (CANVAS_HEIGHT - PLAYER_IDLE_HEIGHT)/2
-    ctx.drawImage(Avatar, imgX, imgY, PLAYER_IDLE_WIDTH, PLAYER_IDLE_HEIGHT)
+    ctx.drawImage(Avatar1, imgX, imgY, PLAYER_IDLE_WIDTH, PLAYER_IDLE_HEIGHT)
     GameMessage.innerText = "Click to Play"
 
     GameCanvas.addEventListener('click', () => {
         GameMessage.innerText = "Run!"
-        console.log(Avatar.style.height)
-        // Animate player to the starting position
-        ctx.drawImage(Avatar, imgX, imgY, PLAYER_GAME_WIDTH, PLAYER_GAME_HEIGHT)
+        // TODO: Animate player to the starting position
+        ctx.drawImage(Avatar1, imgX, imgY, PLAYER_GAME_WIDTH, PLAYER_GAME_HEIGHT)
         // add event handler
         setupKeyEvents()
 
